@@ -21,21 +21,21 @@ class MazeTwo{
 		int rows = maze.length;
 		int cols = maze[0].length;
 		Node[][] mat = new Node[rows][cols];
-		boolean oppSideOpenVert = false;
-		boolean oppSideOpenHori = false;
-		if(dest[0] - 1 >= 0 && dest[0] +1 < rows){
-			if(maze[dest[0]-1][dest[1]] == 0 && maze[dest[0]+1][dest[1]] == 0){
-				oppSideOpenVert = true;
-			}
-		}
-		if(dest[1] - 1 >= 0 && dest[1] +1 < cols){
-			if(maze[dest[0]][dest[1]-1] == 0 && maze[dest[0]][dest[1]+1] == 0){
-				oppSideOpenHori = true;
-			}
-		}
-		System.out.println(oppSideOpenVert);
-		System.out.println(oppSideOpenHori);
-		if((!oppSideOpenHori) && (!oppSideOpenVert)){
+		// boolean oppSideOpenVert = false;
+		// boolean oppSideOpenHori = false;
+		// if(dest[0] - 1 >= 0 && dest[0] +1 < rows){
+		// 	if(maze[dest[0]-1][dest[1]] == 0 && maze[dest[0]+1][dest[1]] == 0){
+		// 		oppSideOpenVert = true;
+		// 	}
+		// }
+		// if(dest[1] - 1 >= 0 && dest[1] +1 < cols){
+		// 	if(maze[dest[0]][dest[1]-1] == 0 && maze[dest[0]][dest[1]+1] == 0){
+		// 		oppSideOpenHori = true;
+		// 	}
+		// }
+		// System.out.println(oppSideOpenVert);
+		// System.out.println(oppSideOpenHori);
+		// if((!oppSideOpenHori) && (!oppSideOpenVert)){
 			for(int i = 0 ; i < rows; i++){
 				for(int j = 0 ; j < cols; j++){
 					mat[i][j] = new Node(i, j, maze[i][j], Integer.MAX_VALUE);
@@ -68,10 +68,10 @@ class MazeTwo{
                 	}
 				}
 			}
-			return mat[dest[0]][dest[1]].count;			
-		}
+			return mat[dest[0]][dest[1]].count == Integer.MAX_VALUE? -1 : mat[dest[0]][dest[1]].count;			
+		// }
 
-		return -1;
+		// return -1;
 	}	
 	public static void main(String[] args) {
 		int[][] m = {{0, 0, 1, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 1, 0}, {1, 1, 0, 1, 1}, {0, 0, 0, 0, 0}};
