@@ -339,7 +339,7 @@ class Solutions{
 		int end = 0;
 		while(end < s.length()){
 			if(s.charAt(end) == '#'){
-				int len = s.substring(start, end).length();
+				int len = Integer.valueOf(s.substring(start, end));
 				String res = s.substring(end+1, end+1+len);
 				ls.add(res);
 

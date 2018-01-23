@@ -5,7 +5,7 @@ class BinaryWatch{
         if(num == 0){
             return ;
         }
-        for(int i = 0 ; i <= num ; i++){
+        for(int i = 0 ; i <= 4 ; i++){
             StringBuilder sb = new StringBuilder();
             sb.append(Integer.toString(1<<i)).append(':');
             System.out.println(sb);
